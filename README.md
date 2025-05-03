@@ -15,3 +15,9 @@ You have 15 rounds. Good luck and enjoy!
 To play this game, run the command `python main.py`. 
 
 The required dependencies is listed in the requirements.txt file. This can be installed using `pip install -r requirements.txt`
+
+
+## Configuration
+
+You can set more rounds / specific answers if you want a more custom challenge. Just run 
+`python main.py --maxTries # --answer word` where # is the max number of tries and word is the answer. Set the answer to "always" to have the word be randomized entirely for your run. Else the word will randomize daily by default. 
