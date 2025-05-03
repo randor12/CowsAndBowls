@@ -100,6 +100,9 @@ def main(maxTries: int=15, answer: str="random") -> None:
     if maxTries < 1:
         print("Maximum tries must be at least 1.")
         return
+    if is_quit_command(answer):
+        print("The answer cannot be a quit command.")
+        return
     guesses = []
     # Use daily random word if the default answer is in place.
     if answer == "random":
