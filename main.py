@@ -158,7 +158,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Cows and Bulls game.")
     parser.add_argument("--maxTries", type=int, default=15, help="Maximum number of tries")
-    parser.add_argument("--answer", type=str, default="random", help="The answer to guess")
+    parser.add_argument("--answer", type=str, default="random", help="The answer to guess. Use 'random' for a daily random word or 'always' for a random word.")
     args = parser.parse_args()
     # run the game with command line arguments
     main(maxTries=args.maxTries, answer=args.answer)
