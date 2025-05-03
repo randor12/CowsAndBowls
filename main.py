@@ -1,7 +1,9 @@
-import requests  # new import
-import datetime  # new import
-import random    # new import
-import pandas as pd  # new import
+import requests
+import datetime
+import random
+import pandas as pd
+import os
+import argparse
 
 # New list of candidate 4-letter words
 df = pd.read_csv("four_letter_words_valid.csv")
@@ -97,7 +99,6 @@ def clear_screen() -> None:
     """
     Clear the screen.
     """
-    import os
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main(maxTries: int=15, answer: str="random") -> None:
@@ -166,7 +167,6 @@ def main(maxTries: int=15, answer: str="random") -> None:
 
 if __name__ == '__main__':
     # parse command line arguments
-    import argparse
     parser = argparse.ArgumentParser(description="Cows and Bulls game.")
     parser.add_argument("--maxTries", type=int, default=15, help="Maximum number of tries")
     parser.add_argument("--answer", type=str, default="random", help="The answer to guess. Use 'random' for a daily random word or 'always' for a random word.")
