@@ -1,2 +1,4 @@
 .venv/
 test.m
+__pycache__/
+*.pyc
