@@ -97,6 +97,9 @@ def main(maxTries: int=15, answer: str="random") -> None:
     """
     Main function to run the game.
     """
+    if maxTries < 1:
+        print("Maximum tries must be at least 1.")
+        return
     guesses = []
     # Use daily random word if the default answer is in place.
     if answer == "random":
