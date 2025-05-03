@@ -112,6 +112,10 @@ def main(maxTries: int=15, answer: str="random") -> None:
         print_round_info(roundNumber, maxTries)
         user_input = guess_the_word()
         user_input = user_input.lower()
+        if is_quit_command(user_input):
+            print("You quit the game.")
+            quit = True
+            break
         if user_input == "":
             print("You must enter a word.")
             continue  # do not count as a round
@@ -135,9 +139,6 @@ def main(maxTries: int=15, answer: str="random") -> None:
             break
         if user_input == answer:
             win = True
-            quit = True
-        elif is_quit_command(user_input):
-            print("You quit the game.")
             quit = True
         else:
             correct_position, wrong_position = check_guess(user_input, answer)
