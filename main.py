@@ -93,6 +93,13 @@ def print_round_info(roundNumber: int, maxTries: int) -> None:
     print("Round:", roundNumber + 1)                # show upcoming round
     print("You have", maxTries - roundNumber, "tries left.")  # tries left before a valid guess
 
+def clear_screen() -> None:
+    """
+    Clear the screen.
+    """
+    import os
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def main(maxTries: int=15, answer: str="random") -> None:
     """
     Main function to run the game.
@@ -113,6 +120,7 @@ def main(maxTries: int=15, answer: str="random") -> None:
     quit = False
     win = False
     roundNumber = 0
+    clear_screen()
     welcome_message(answer, maxTries)
     while not quit:
         print_round_info(roundNumber, maxTries)
